@@ -1,0 +1,300 @@
+/* Variables para los colores basados en la plantilla */
+:root {
+    --color-primary-light: #FFFAE9; /* Fondo muy claro */
+    --color-secondary-light: #FFF0E0; /* Tono de melocotón claro para contenedores */
+    --color-text-dark: #333;
+    --color-text-light: #555;
+    --color-pink-category: #FFB3D9;
+    --color-light-pink-category: #FFD9EB;
+    --color-light-green-category: #D9FFB3;
+    --color-beige-category: #FFEEC4;
+    --color-skin-tone-category: #FFEDD9;
+    --color-button: #FFB3D9; /* Rosa del botón */
+}
+
+/* -------------------- Estilos Generales -------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-primary-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white; /* Contenedor principal para simular el cuerpo central */
+    padding-bottom: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+}
+
+/* -------------------- Encabezado y Navegación -------------------- */
+.header {
+    padding: 10px 30px 0;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    padding: 0 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--color-button);
+}
+
+.nav-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+/* -------------------- Sección Principal (Hero) -------------------- */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 30px;
+    position: relative;
+    overflow: hidden; /* Para contener el fondo de gradiente */
+}
+
+/* Simulación del fondo amarillo/rosa del banner */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 60%;
+    height: 120%;
+    background: linear-gradient(135deg, var(--color-secondary-light) 0%, var(--color-primary-light) 100%);
+    z-index: 0;
+    border-bottom-left-radius: 50%;
+}
+
+.hero-content {
+    max-width: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    background-color: var(--color-button);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #e09cd9;
+}
+
+.hero-image-container {
+    max-width: 40%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 300px; /* Ajuste para que no sea muy grande */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/* -------------------- Sección de Categorías -------------------- */
+.categories-section {
+    padding: 30px;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap; /* Para hacerlo responsivo */
+}
+
+.category-card {
+    flex: 1 1 18%; /* Permite 5 tarjetas por fila en escritorio */
+    min-width: 150px;
+    height: 120px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-placeholder {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+/* Colores de las tarjetas de categoría */
+.pink { background-color: var(--color-pink-category); }
+.light-pink { background-color: var(--color-light-pink-category); }
+.light-green { background-color: var(--color-light-green-category); }
+.beige { background-color: var(--color-beige-category); }
+.skin-tone { background-color: var(--color-skin-tone-category); }
+
+/* -------------------- Sección de Productos Destacados -------------------- */
+.featured-section {
+    padding: 30px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* -------------------- Media Queries (para Responsividad) -------------------- */
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .categories-grid {
+        justify-content: center;
+    }
+    .category-card {
+        flex: 1 1 40%; /* 2 por fila */
+    }
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 por fila */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px 0;
+    }
+    .nav-bar {
+        flex-direction: column;
+    }
+    .nav-menu ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-menu ul li a {
+        padding: 5px 10px;
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .hero-section::after {
+        width: 100%;
+        height: 80%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 50%;
+        top: 60%;
+        left: 0;
+        right: auto;
+    }
+    .featured-grid {
+        grid-template-columns: 1fr; /* 1 por fila */
+    }
+}
